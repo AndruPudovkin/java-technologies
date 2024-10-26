@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-role-table
+      author: andru
+      changes:
+        - createTable:
+            tableName: role
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: id_users
+                  type: java.lang.Long
+                  constraints:
+                    nullable: false
+              - column:
+                  name: user_role
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+
+  - changeSet:
+      id: create-fk-role-users
+      author: andru
+      changes:
+        - addForeignKeyConstraint:
+            baseTableName: role
+            baseColumnNames: id_users
+            constraintName: fk_users_roles
+            referencedTableName: users
+            referencedColumnNames: id

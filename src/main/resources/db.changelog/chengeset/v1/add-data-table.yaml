@@ -1,0 +1,55 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-data-for-users-pole
+      author: andru
+      changes:
+        - loadData:
+            columns:
+              - column:
+                  header: id
+                  name: id
+              - column:
+                  header: first_name
+                  name: first_name
+              - column:
+                  header: last_name
+                  name: last_name
+              - column:
+                  header: data_of_birth
+                  name: data_of_birth
+              - column:
+                  header: inn
+                  name: inn
+              - column:
+                  header: snils
+                  name: snils
+              - column:
+                  header: passport_number
+                  name: passport_number
+              - column:
+                  header: login
+                  name: login
+              - column:
+                  header: pass
+                  name: pass
+            tableName: users
+            encoding: UTF-8
+            separator: ','
+            quotchar: '"'
+            file: db.changelog/csv/csv_v1/user.csv
+        - loadData:
+            columns:
+              - column:
+                  header: id
+                  name: id
+              - column:
+                  header: user_role
+                  name: user_role
+              - column:
+                  header: id_users
+                  name: id_users
+            tableName: role
+            encoding: UTF-8
+            separator: ','
+            quotchar: '"'
+            file: db.changelog/csv/csv_v1/role.csv

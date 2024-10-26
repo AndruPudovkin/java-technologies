@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      file: db.changelog/chengeset/v1/create-table-users.yaml
+  - include:
+      file: db.changelog/chengeset/v1/create-table-role.yaml
+  - include:
+      file: db.changelog/chengeset/v1/add-data-table.yaml

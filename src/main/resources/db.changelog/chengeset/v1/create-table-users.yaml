@@ -1,0 +1,60 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-users-table
+      author: andru
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: date_of_birth
+                  type: date
+                  constraints:
+                    nullable: false
+              - column:
+                  name: inn
+                  type: varchar(12)
+                  constraints:
+                    unique: true
+                    nullable: false
+              - column:
+                  name: snils
+                  type: varchar(11)
+                  constraints:
+                    unique: true
+                    nullable: false
+              - column:
+                  name: passport_number
+                  type: varchar(10)
+                  constraints:
+                    unique: true
+                    nullable: false
+              - column:
+                  name: login
+                  type: varchar(20)
+                  constraints:
+                    unique: true
+                    nullable: false
+              - column:
+                  name: pass
+                  type: varchar(20)
+                  constraints:
+                    unique: true
+                    nullable: false
