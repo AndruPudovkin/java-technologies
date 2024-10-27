@@ -1,8 +1,8 @@
-package com.example.javaprojectpudovkin.integrationTests;
+package com.example.javaprojectpudovkin.integration;
 
-import com.example.javaprojectpudovkin.MyAppApplication;
+import com.example.javaprojectpudovkin.JavaProjectPudovkinApplication;
 import com.example.javaprojectpudovkin.dto.UserFulInfoDto;
-import com.example.javaprojectpudovkin.integrationTests.testContainers.PostgresTestContainers;
+import com.example.javaprojectpudovkin.integration.testContainers.PostgresTestContainers;
 import com.example.javaprojectpudovkin.persistent.enam.Role;
 import com.example.javaprojectpudovkin.persistent.model.User;
 import com.example.javaprojectpudovkin.persistent.repository.UserRepository;
@@ -22,7 +22,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @Testcontainers
 @Transactional
-@SpringBootTest(classes = MyAppApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(classes = JavaProjectPudovkinApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class UserServiceIntegrationTest extends PostgresTestContainers {
 
         @Autowired

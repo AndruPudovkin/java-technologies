@@ -8,6 +8,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -55,4 +56,7 @@ public class User {
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user",orphanRemoval = true, cascade = CascadeType.ALL)
     private Set<UserRole> roles;
+
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "user")
+    private Requisites requisites;
 }

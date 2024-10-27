@@ -1,0 +1,63 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-requisites-table
+      author: andru
+      changes:
+        - createTable:
+            tableName: requisites
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: settlement_account
+                  type: varchar(20)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: bic
+                  type: varchar(5)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: correspondent_account
+                  type: varchar(20)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: inn
+                  type: varchar(12)
+                  constraints:
+                    unique: true
+                    nullable: false
+              - column:
+                  name: kpp
+                  type: varchar(11)
+                  constraints:
+                    unique: true
+                    nullable: false
+              - column:
+                  name: kbk
+                  type: varchar(10)
+                  constraints:
+                    unique: true
+                    nullable: false
+              - column:
+                  name: user_id
+                  type: BIGINT
+                  constraints:
+                    unique: true
+  - changeSet:
+      id: create-fk-requisites-users
+      author: andru
+      changes:
+        - addForeignKeyConstraint:
+            baseTableName: requisites
+            baseColumnNames: user_id
+            constraintName: fk_users_requisites
+            referencedTableName: users
+            referencedColumnNames: id
