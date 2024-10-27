@@ -1,4 +1,4 @@
-package com.example.javaprojectpudovkin.integrationTests.testContainers;
+package com.example.javaprojectpudovkin.integration.testContainers;
 
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;

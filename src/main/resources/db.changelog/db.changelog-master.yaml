@@ -5,3 +5,7 @@ databaseChangeLog:
       file: db.changelog/chengeset/v1/create-table-role.yaml
   - include:
       file: db.changelog/chengeset/v1/add-data-table.yaml
+  - include:
+     file: db.changelog/chengeset/v2/create-table-requisites.yaml
+  - include:
+      file: db.changelog/chengeset/v2/add-data-requisites.yaml

@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-data-for-requisites
+      author: andru
+      changes:
+        - loadData:
+            columns:
+              - column:
+                  header: id
+                  name: id
+              - column:
+                  header: settlement_account
+                  name: settlement_account
+              - column:
+                  header: bic
+                  name: bic
+              - column:
+                  header: correspondent_account
+                  name: correspondent_account
+              - column:
+                  header: inn
+                  name: inn
+              - column:
+                  header: kpp
+                  name: kpp
+              - column:
+                  header: kbk
+                  name: kbk
+              - column:
+                  header: user_id
+                  name: user_id
+            tableName: requisites
+            encoding: UTF-8
+            separator: ','
+            quotchar: '"'
+            file: db.changelog/csv/csv_v2/requisites.csv

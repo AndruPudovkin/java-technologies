@@ -21,7 +21,6 @@ public class UserControllerImpl implements UserController {
 
     private final UserService userService;
 
-
     @Override
     @GetMapping("/{id}")
     public ResponseEntity<UserFulInfoDto> getUserById(@PathVariable("id") Long id) {
