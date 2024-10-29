@@ -16,6 +16,7 @@ public class RequisitesServiceImpl implements RequisitesService {
     @Override
     @Transactional
     public RestDto getRestDto(Long id) {
-        return requisitesRepository.findRestDtoById(id);
+         RestDto restDto = requisitesRepository.findRestDtoById(id);
+             return restDto;
     }
 }

@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.HashSet;
 import java.util.Set;
 
+
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
@@ -23,23 +24,24 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public UserFulInfoDto getUserById(Long id) {
-        User user = userRepository.findById(id).orElse(null);
-        return userMapper.toDto(user);
+
+            User user = userRepository.findById(id).orElse(null);
+            return userMapper.toDto(user);
     }
 
     @Override
     @Transactional
     public void saveUser(UserFulInfoDto userFulInfoDto) {
-        Set<UserRole> roles = new HashSet<>();
-        User user = userMapper.toEntity(userFulInfoDto);
+            Set<UserRole> roles = new HashSet<>();
+            User user = userMapper.toEntity(userFulInfoDto);
 
-        userFulInfoDto.roles().stream().forEach(role -> {
-            UserRole userRole = new UserRole();
-            userRole.setUserRole(role);
-            userRole.setUser(user);
-            roles.add(userRole);
-        });
-        user.setRoles(roles);
-        userRepository.save(user);
+            userFulInfoDto.roles().stream().forEach(role -> {
+                UserRole userRole = new UserRole();
+                userRole.setUserRole(role);
+                userRole.setUser(user);
+                roles.add(userRole);
+            });
+            user.setRoles(roles);
+            userRepository.save(user);
     }
 }
